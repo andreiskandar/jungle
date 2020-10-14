@@ -12,8 +12,8 @@
       </thead>
       <tbody>
         <tr>
-          <td scope="row" class="text-center"><%= @products.count %></td>
-          <td scope="row" class="text-center"><%= @categories.count %></td>
+          <td scope="row" class="text-center"><%= link_to @products.count, products_path %></td>
+          <td scope="row" class="text-center"><%= link_to @categories.count, "/categories/1" %></td>
         </tr>
       </tbody>
     </table>
