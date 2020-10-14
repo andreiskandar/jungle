@@ -1,5 +1,4 @@
 <section class="cart-show">
-
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -31,7 +30,7 @@
       </tfoot>
     </table>
   </div>
-
+  
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -42,11 +41,18 @@
           data-name="Jungle"
           data-description="Khurram Virani's Jungle Order"
           data-locale="auto"
-          data-email="kvirani@gmail.com"
+          data-email="ketoprakshot@gmail.com"
           data-currency="cad">
         </script>
       <% end %>
     </div>
   </div>
+</section>
 
+<section class="cart-empty">
+  <br>
+  <div class="alert alert-info">
+    <h3 >Your cart is empty</h3>
+    <%= link_to "Home", products_path %>
+  </div>
 </section>
