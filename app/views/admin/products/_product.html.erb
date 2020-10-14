@@ -14,7 +14,7 @@
     <%= humanized_money_with_symbol product.price %>
   </td>
   <td>
-    <%= product.quantity %>
+    <div class="text-center"><%= product.quantity %></div>
   </td>
   <td>
     <%= link_to fa_icon('trash'), [:admin, product], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
