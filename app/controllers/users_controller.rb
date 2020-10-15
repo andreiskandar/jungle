@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    raise  @user.email
+    
     if @user.save
       session[:user_email] = @user.email
       redirect_to :root, notice: 'New User Created'
