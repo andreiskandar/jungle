@@ -1,8 +1,11 @@
 <tr>
-  <td>
-    <%= category.name %>
+  <td class="text-center">
+    <%= category.id %>
   </td>
-  <td>
-    
+  <td class="text-center">
+    <%= link_to category.name, category %>
+  </td>
+  <td class="text-center">
+    <%= category.products.count %>
   </td>
 </tr>

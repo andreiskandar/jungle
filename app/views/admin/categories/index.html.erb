@@ -1,14 +1,18 @@
 <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title text-center">Category</h2>
+  </div>
   <div class="table-responsive">
     <table class="table">
       <thead>
-        <tr>
+        <tr class>
+          <th scope="col" class="text-center">#</th>
           <th scope="col" class="text-center">Name</th>
           <th scope="col" class="text-center">Total Products</th>
         </tr>
       </thead>
       <tbody>
-        <%= @categories.each do |category| %>
+        <% @categories.each do |category| %>
           <%= render 'category', category: category %>
         <% end %>
       </tbody>

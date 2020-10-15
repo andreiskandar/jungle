@@ -5,9 +5,11 @@ class Admin::CategoriesController < ApplicationController
   # end
 
   def index
-    @categories = Category.all
-    @category = Category.find(params[:id])
-    @products = @category.products.order(created_at: :desc)
+    @categories = Category.all 
+    @products =  []
+    @categories.each do |category|
+      @products.push(category.products)
+    end
   end
 
 
