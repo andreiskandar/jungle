@@ -12,12 +12,11 @@
       </thead>
       <tbody>
         <tr>
-          <td scope="row" class="text-center"><%= link_to @products.count, products_path %></td>
-          <td scope="row" class="text-center"><%= link_to @categories.count, "/categories/1" %></td>
+          <td scope="row" class="text-center"><%= link_to @products.count, admin_products_path %></td>
+          <td scope="row" class="text-center"><%= link_to @categories.count, admin_categories_path %></td>
         </tr>
       </tbody>
     </table>
   </div>
-
 </div>
 
