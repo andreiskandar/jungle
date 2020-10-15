@@ -30,8 +30,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Register', register_path %></li>
-        <li><%= link_to 'Sign in', :login %></li>
+        <li><%= link_to 'Register', register_users_path %></li>
+        <li><%= link_to 'Sign in', login_users_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -49,7 +49,7 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
-        <li><%= link_to 'Logout', register_path %></li>
+        <li><%= link_to 'Logout', logout_users_path %></li>
       </ul>
     </div>
   </div>

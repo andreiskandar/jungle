@@ -1,12 +1,18 @@
 class SessionsController < ApplicationController
-  before_filter :authorize
+  # before_filter :authorize
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.find_by_email(params[:email])
+    raise @user.inspect
     if @user && @user.authenticate(params[:password])
       session[:user_email] = @user.email
       redirect_to :root
     else
-      redirect_to '/login'
+      flash[:error] = 'An error occured!'
+      redirect_to login_users_path
     end
   end
 

@@ -5,17 +5,27 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
-  # resources :about, only: [:show]
+  # resources :about, only: [:index]
   get '/about', to: 'about#show'
   # get '/about' => "about#show"
   # post '/about' => "about#create"
 
-  get '/register' => 'users#new'
-  post '/users' => 'users#create'
+  # post '/user' => 'users#create'
+  # get '/user/register' => 'users#new'
+  # get '/user/login' => 'sessions#new'
+  # post '/user/login' => 'sessions#create'
+  # get 'user/logout' => 'sessions#destroy'
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  resources :users, only: [:create] do
+    collection do
+      root              to: 'users#new'
+      get   :register,  to: 'users#new'
+      get   :login,     to: 'sessions#new'
+      post  :login,     to: 'sessions#create'
+      get   :logout,    to: 'sessions#destroy'
+    end
+  end
+
 
 
   resource :cart, only: [:show] do
