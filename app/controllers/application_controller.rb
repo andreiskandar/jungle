@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   # def current_user
   #   @current_user ||= User.find(session[:user_email]) if session[:user_email]
   # end
-  # helper_method current_user
+
+  # helper_method self.current_user
 
   # def authorize
   #   redirect_to :login unless @current_user
