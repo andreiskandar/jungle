@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
   #   redirect_to :login unless @current_user
   # end
 
+  def isLogin
+    session[:user_email]
+  end
   private
 
   def cart

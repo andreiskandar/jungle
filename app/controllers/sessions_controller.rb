@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
       redirect_to :root
     else
-      flash[:error] = 'An error occured!'
+      flash[:error] = 'Something wrong with email or password'
       redirect_to login_users_path
     end
   end
