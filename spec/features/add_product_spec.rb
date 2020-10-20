@@ -7,7 +7,7 @@ RSpec.feature "AddProducts", type: :feature, js:true do
     mock_item
   end
 
-    scenario 'User can add item to cart and see number of item increases by 1 in the cart' do
+    scenario 'User can add item to cart and see number of item increases by 1 in the cart when not logged in' do
       visit root_path
 
       find_button('Add').click

@@ -9,3 +9,13 @@ def mock_item
       price: 25
     )
 end
+
+def create_mock_user
+  @user = User.create!(
+    first_name: 'Jack',
+    last_name: 'Monroe',
+    email: 'mock@USER.COm',
+    password: '111111',
+    password_confirmation: '111111'
+  )
+end
