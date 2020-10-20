@@ -1,42 +1,31 @@
 require 'rails_helper'
-require 'capybara/rails'
 
-RSpec.feature "Visitor can add product", type: :feature, js: true do
+RSpec.feature "AddProducts", type: :feature, js:true do
 
-  before(:each) do
-    @category = Category.create! name: "Apparel"
-
+  before :each do
+    @category = Category.create! name: 'furniture'
     @category.products.create!(
-      name:  'Red Bookshelf',
-      description: Faker::Hipster.paragraph(4),
-      image: open_asset('furniture1.jpg'),
-      quantity: 10, 
-      price: 64.99
+      name: 'Electric Chair',
+      description: 'Shabby chic fixie pabst 90\'s wayfarers typewriter distillery. Leggings skateboard diy jean shorts fixie. Lumbersexual hashtag taxidermy tacos. Lomo messenger bag yr williamsburg bitters locavore meditation. Hammock williamsburg vice ugh.',
+      price: 500,
+      quantity: 2,
+      image: open_asset('furniture1.jpg')
     )
-
-  end  
-
-  scenario "A user can add a product to their cart when not logged in" do 
-    # visit the home page
-    visit root_path
-
-    # find a product listing
-    # click add button on that product listing
-    first('article.product').find_button('Add').click
-    
-    # check if nav has item in cart
-    # click the cart link
-    find_link('My Cart (1)').click
-
-    # check that item exists in the cart
-    expect(page).to have_content("TOTAL:")
-    expect(page).to have_content("Red Bookshelf")
-
-    page.save_screenshot
-
-  
   end
 
+    scenario 'User can add item to cart and see number of item increases by 1 in the cart' do
+      visit root_path
+
+      find_button('Add').click
+
+      find_link('My Cart (1)').click
+
+      find_button('+').click
+
+      expect(page).to have_content('TOTAL:')
+      expect(page).to have_content('2')
+      expect(page).to have_content('$1,000')
+
+      page.save_screenshot
+    end
 end
-
-
