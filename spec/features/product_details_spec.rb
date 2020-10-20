@@ -2,19 +2,12 @@ require 'rails_helper'
 require 'capybara/rails'
 
 RSpec.feature "Product Details", type: :feature , js: true do
-
+  
+  # invoke helper function to create item
   before :each do 
-    @category = Category.create! name: 'apparel'
-
-    @category.products.create!(
-      name: 'Hipster Hat',
-      description: 'Heirloom stumptown asymmetrical kombucha. Yolo fanny pack freegan loko roof. Five dollar toast you probably haven\'t heard of them poutine gluten-free. Portland',
-      image: open_asset('apparel3.jpg'),
-      quantity: 5,
-      price: 24.99
-    )
+    mock_item
   end
-
+  
   scenario "User can see product details" do
     
     visit root_path

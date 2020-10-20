@@ -2,15 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "AddProducts", type: :feature, js:true do
 
+  # invoke helper function to mock_item
   before :each do
-    @category = Category.create! name: 'furniture'
-    @category.products.create!(
-      name: 'Electric Chair',
-      description: 'Shabby chic fixie pabst 90\'s wayfarers typewriter distillery. Leggings skateboard diy jean shorts fixie. Lumbersexual hashtag taxidermy tacos. Lomo messenger bag yr williamsburg bitters locavore meditation. Hammock williamsburg vice ugh.',
-      price: 500,
-      quantity: 2,
-      image: open_asset('furniture1.jpg')
-    )
+    mock_item
   end
 
     scenario 'User can add item to cart and see number of item increases by 1 in the cart' do
@@ -24,7 +18,7 @@ RSpec.feature "AddProducts", type: :feature, js:true do
 
       expect(page).to have_content('TOTAL:')
       expect(page).to have_content('2')
-      expect(page).to have_content('$1,000')
+      expect(page).to have_content('$50')
 
       page.save_screenshot
     end
