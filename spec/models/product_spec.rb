@@ -32,7 +32,7 @@ RSpec.describe Product, type: :model do
       expect(@product).to_not be_valid
     end
 
-    it "should show errors.full_messages when a new product fields are empty" do
+    it "should show errors full_messages when a new product fields are empty" do
       new_product = Product.new      
       new_product.valid?
       expect(new_product.errors.full_messages).to_not be_empty
