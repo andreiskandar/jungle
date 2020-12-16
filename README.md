@@ -2,6 +2,21 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screen Shots
+
+Main Page
+
+![Selection_131](https://user-images.githubusercontent.com/56459037/102388648-e7ad6480-3f86-11eb-90bf-8b87ae7f2d12.png)
+
+My Cart
+
+![ordertotal](https://user-images.githubusercontent.com/56459037/102388747-057ac980-3f87-11eb-9669-4538909637bf.png)
+
+Item Details
+
+![capybara-202010201453161535238150](https://user-images.githubusercontent.com/56459037/102388777-10cdf500-3f87-11eb-8b71-abc70edb34ef.png)
+
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
