@@ -1,6 +1,7 @@
-# Jungle
+# [Jungle](https://project-jungle.herokuapp.com/)
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+##### Click on the title of the app to see a live demo!
 
 ## Screen Shots
 
